@@ -9,9 +9,9 @@ public class evenorodd {
         int num = reader.nextInt();
 
         if (num % 2 == 0)
-            System.out.println(num + " is even");
+            System.out.println(num + " yes this number is even");
         else {
-            System.out.println(num + " is odd");
+            System.out.println(num + " yes this number is odd");
         }
     }
 }
