@@ -1,31 +1,30 @@
-import java.lang.*;
-import java.io.*;
-import java.util.*;
+//public class Lekhya {
+//    public static void main(String[] args) {
+//        System.out.println(StringFormatter.reverseWord("my name is Lekhya"));
+//        System.out.println(StringFormatter.reverseWord("Cars are my life :)"));
+//    }
+//}
 
-class Lekhya {
+import java.util.Scanner;
+public class Lekhya {
     public static void main(String[] args) {
-        //String name = "Lekhya";
-        StringBuilder name1 = new StringBuilder("Lekhya");
-        // name1.append(name);
-        name1.reverse();
-        System.out.println(name1 + " reverse of the string in Method 1");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Given string : ");
+        String oStr = scanner.nextLine();
+        scanner.close();
 
-        String input = "Lekhya";
-        char[] t1 = input.toCharArray();
-        for (int i = t1.length - 1; i >= 0; i--)
-            System.out.print(t1[i]);
-        System.out.print("Reversing the string in Method2");
+        String words[] = oStr.split("\\s");
+        String rString = "";
 
-        String str = "Nitin", reverseStr = "";
-        //int strLength = str.length();
-        for (int i = (str.length() - 1); i >=0; i--) {
-            reverseStr = reverseStr + str.charAt(i);
+
+        for (int i = 0; i < words.length; i++)  {
+            String word = words[i];
+            String reverseWord = "";
+            for (int j = word.length() - 1; j >= 0; j--) {
+                reverseWord = reverseWord + word.charAt(j);
+            }
+            rString = rString + reverseWord + " ";
         }
-        if (str.toLowerCase().equals(reverseStr.toLowerCase())){
-            System.out.println("\n" + str + " is a Palindrome String.");
-        }
-        else {
-            System.out.println(str + " is not a Palindrome String.");
-        }
+        System.out.print("Reversed string : " + rString);
     }
 }
